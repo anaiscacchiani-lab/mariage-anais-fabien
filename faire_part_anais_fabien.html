@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anaïs & Fabien — 2 octobre 2027</title>
+<style>
+:root{--burgundy:#641d2d;--wine:#7b293b;--ivory:#f7f1e6;--olive:#68704d;--gold:#b79a62;--ink:#3e302b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+section{min-height:100svh;padding:54px 22px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cover{background:radial-gradient(ellipse at center,#fffdf7 0,#f4eadc 70%,#e9ddcb 100%);text-align:center}
+.cover:before,.cover:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #b79a6255;border-radius:50%;top:-110px;left:-100px}.cover:after{top:auto;left:auto;bottom:-120px;right:-100px}
+.envelope{width:min(420px,92vw);height:270px;position:relative;background:#702638;box-shadow:0 24px 55px #45202b33;border-radius:5px;cursor:pointer;perspective:900px;margin:26px auto 22px}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#8b3949,#5b1b2b);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:2}
+.flap{position:absolute;inset:0;background:#873849;clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform 1s ease;z-index:4;filter:drop-shadow(0 4px 3px #3d1520)}
+.seal{position:absolute;z-index:5;left:50%;top:49%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#a94d5d,#681b2b 68%,#471321);border:2px solid #b98b70;box-shadow:0 5px 12px #35121d66;color:#f0d9b5;display:grid;place-items:center;font-size:22px;letter-spacing:1px;transition:opacity .4s}
+.letter{position:absolute;z-index:1;background:#fffaf0;inset:15px 20px 20px;padding:25px 12px;color:var(--burgundy);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform 1s ease}
+.envelope.open .flap{transform:rotateX(180deg);z-index:0}.envelope.open .seal{opacity:0}.envelope.open .letter{transform:translateY(-115px)}
+.kicker{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--olive)}
+h1{font-size:clamp(42px,10vw,68px);font-weight:400;font-style:italic;color:var(--burgundy);margin:14px 0}
+.date{font:13px Arial,sans-serif;letter-spacing:4px;color:var(--gold)}
+.hint{font:12px Arial,sans-serif;letter-spacing:1.5px;color:#76685b;margin-top:18px}
+.panel{max-width:650px;width:100%;text-align:center;border:1px solid #b79a6266;padding:42px 25px;background:#fffaf2dd;position:relative}
+.panel:before{content:"";position:absolute;inset:9px;border:1px solid #b79a6244;pointer-events:none}
+h2{font-size:clamp(32px,8vw,48px);font-weight:400;font-style:italic;color:var(--burgundy);margin:14px 0}
+p{font-size:17px;line-height:1.75;max-width:480px;margin:12px auto}
+.ornament{color:var(--olive);font-size:25px;letter-spacing:8px;margin:18px}
+.countdown{display:flex;justify-content:center;gap:10px;margin:25px auto;flex-wrap:wrap}
+.unit{background:#f1e8d9;border:1px solid #b79a6266;min-width:67px;padding:13px 9px}
+.unit b{display:block;color:var(--burgundy);font-size:27px;font-weight:400}.unit small{font:10px Arial,sans-serif;letter-spacing:1.5px;color:var(--olive);text-transform:uppercase}
+.timeline{display:grid;gap:15px;margin:25px auto;max-width:440px;text-align:left}
+.event{border-left:2px solid var(--gold);padding:5px 0 8px 18px}
+.event strong{display:block;color:var(--burgundy);font-size:18px;font-weight:400}
+.event span{font:12px Arial,sans-serif;letter-spacing:1px;color:var(--olive);text-transform:uppercase}
+form{max-width:420px;margin:24px auto 0;text-align:left;position:relative;z-index:1}
+label{display:block;font:12px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--olive);margin:14px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #cdbb9b;background:#fffdf8;color:var(--ink);font:16px Georgia,serif;border-radius:2px}
+button{border:1px solid var(--gold);background:var(--burgundy);color:#fff7e9;padding:14px 22px;letter-spacing:1px;cursor:pointer;font:12px Arial,sans-serif;width:100%;margin-top:18px}
+.note{font:12px Arial,sans-serif!important;color:#78695d;line-height:1.5!important}
+footer{padding:28px;text-align:center;background:var(--burgundy);color:#f8efe2;font:11px Arial,sans-serif;letter-spacing:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<section class="cover" id="accueil">
+ <div>
+  <div class="kicker">Une invitation à ouvrir</div>
+  <div class="envelope" id="env" role="button" tabindex="0" aria-label="Ouvrir l'enveloppe">
+   <div class="letter"><div class="kicker">Vous êtes invités</div><div style="font-size:31px;font-style:italic">Anaïs & Fabien</div><div class="date">02 · 10 · 2027</div></div>
+   <div class="flap"></div><div class="seal">A&nbsp;·&nbsp;F</div>
+  </div>
+  <div class="hint">TOUCHEZ LE SCEAU POUR OUVRIR</div>
+  <p style="font-size:13px;color:#78695d">Burgundy · Ivoire · Vert olive</p>
+ </div>
+</section>
+<section>
+ <div class="panel">
+  <div class="kicker">Le grand jour</div><h2>Anaïs & Fabien</h2>
+  <div class="date">SAMEDI 2 OCTOBRE 2027</div><div class="ornament">❧ ✦ ❧</div>
+  <p>Ont la joie de vous convier à célébrer leur mariage et à partager avec eux une journée remplie d’amour et de bonheur.</p>
+  <p style="color:var(--olive);font-style:italic">Votre présence sera le plus beau des cadeaux.</p>
+  <div class="kicker" style="margin-top:30px">Le compte à rebours est lancé</div>
+  <div class="countdown" aria-live="polite">
+   <div class="unit"><b id="days">—</b><small>Jours</small></div>
+   <div class="unit"><b id="hours">—</b><small>Heures</small></div>
+   <div class="unit"><b id="minutes">—</b><small>Minutes</small></div>
+   <div class="unit"><b id="seconds">—</b><small>Secondes</small></div>
+  </div>
+  <p class="note">Jusqu’au 2 octobre 2027 à 15h00.</p>
+ </div>
+</section>
+<section>
+ <div class="panel">
+  <div class="kicker">Le programme</div><h2>Une journée à partager</h2>
+  <div class="timeline">
+   <div class="event"><span>15h00</span><strong>Cérémonie</strong><p style="font-size:14px;margin:4px 0">Lieu à confirmer</p></div>
+   <div class="event"><span>À suivre</span><strong>Vin d’honneur</strong><p style="font-size:14px;margin:4px 0">Détails à venir</p></div>
+   <div class="event"><span>À suivre</span><strong>Dîner & soirée</strong><p style="font-size:14px;margin:4px 0">Lieu et horaires à confirmer</p></div>
+   <div class="event"><span>Pour finir</span><strong>Danse & festivités</strong><p style="font-size:14px;margin:4px 0">Jusqu’au bout de la nuit</p></div>
+  </div>
+  <p class="note">Les informations pratiques seront ajoutées dès qu’elles seront confirmées.</p>
+ </div>
+</section>
+<section>
+ <div class="panel">
+  <div class="kicker">Votre réponse</div><h2>Serez-vous des nôtres ?</h2>
+  <p>Merci de nous confirmer votre présence en remplissant ce petit formulaire.</p>
+  <form id="rsvp">
+   <label for="guest">Votre nom et prénom</label><input id="guest" name="guest" autocomplete="name" required placeholder="Nom et prénom">
+   <label for="attendance">Serez-vous présents ?</label>
+   <select id="attendance" name="attendance" required><option value="">Choisissez une réponse</option><option>Oui, avec plaisir !</option><option>Non, malheureusement</option></select>
+   <label for="count">Nombre de personnes (vous compris)</label><select id="count" name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+   <label for="message">Un petit mot (facultatif)</label><textarea id="message" name="message" rows="3" placeholder="Votre message..."></textarea>
+   <button type="submit">ENVOYER MA RÉPONSE</button>
+  </form>
+  <p class="note">Votre application e-mail s’ouvrira avec votre réponse préremplie à envoyer à Anaïs. L’envoi n’est pas automatique.</p>
+ </div>
+</section>
+<section>
+ <div class="panel">
+  <div class="kicker">Nous avons hâte</div><h2>À très bientôt</h2><div class="ornament">❧</div>
+  <p>Merci de réserver cette date dans vos agendas.</p><p class="date">ANAÏS & FABIEN · 02.10.2027</p>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">REVENIR À L’ENVELOPPE</button>
+ </div>
+</section>
+<footer>ANAÏS & FABIEN · 2 OCTOBRE 2027</footer>
+<script>
+const env=document.getElementById('env');
+function openEnvelope(){env.classList.add('open');setTimeout(()=>document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'}),1150)}
+env.addEventListener('click',openEnvelope);
+env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope()}});
+function tick(){
+ const target=new Date('2027-10-02T15:00:00+02:00').getTime();
+ let diff=Math.max(0,target-Date.now());
+ const d=Math.floor(diff/86400000);diff%=86400000;
+ const h=Math.floor(diff/3600000);diff%=3600000;
+ const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);
+ document.getElementById('days').textContent=d;
+ document.getElementById('hours').textContent=String(h).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+document.getElementById('rsvp').addEventListener('submit',e=>{
+ e.preventDefault();const f=new FormData(e.target);
+ const subject=encodeURIComponent('Réponse invitation mariage — '+f.get('guest'));
+ const body=encodeURIComponent('Bonjour Anaïs et Fabien,\n\nNom : '+f.get('guest')+'\nPrésence : '+f.get('attendance')+'\nNombre de personnes : '+f.get('count')+'\nMessage : '+(f.get('message')||'Aucun')+'\n\n');
+ window.location.href='mailto:anais.cacchiani@gmail.com?subject='+subject+'&body='+body;
+});
+</script>
+</body></html>
